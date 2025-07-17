@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle"> <!-- Define como retângulo (padrão) -->
+
+    <!-- Cor de fundo do card -->
+    <solid android:color="#FFFFFF"/> <!-- Branco -->
+
+    <!-- Borda do card -->
+    <stroke
+        android:width="1dp"
+        android:color="#EB7D46"/>
+
+    <!-- Cantos arredondados -->
+    <corners android:radius="12dp"/> <!-- Raio de curvatura -->
+
+    <!-- Espaçamento interno (opcional) -->
+    <padding
+        android:left="4dp"
+        android:top="4dp"
+        android:right="4dp"
+        android:bottom="4dp"/>
+</shape>
