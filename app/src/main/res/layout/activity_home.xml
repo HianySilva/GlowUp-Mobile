@@ -103,7 +103,7 @@
             android:columnOrderPreserved="false"
             android:useDefaultMargins="true">
 
-            <!-- Pó Facial -->
+            <!-- blush-->
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="140dp"
@@ -123,21 +123,21 @@
                     <ImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:src="@drawable/ic_powder"
-                        android:tint="#eb7d46" />
+                        android:src="@drawable/ic_blush"
+                        app:tint="#eb7d46" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Pó Facial"
+                        android:text="Blush"
                         android:textColor="#eb7d46"
                         android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
-            </FrameLayout>
 
-            <!-- Batom -->
+            </FrameLayout>
+            <!-- bronzer-->
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="140dp"
@@ -157,22 +157,21 @@
                     <ImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:src="@drawable/ic_lipstick"
-                        android:tint="#eb7d46" />
+                        android:src="@drawable/ic_bronzer"
+                        app:tint="#eb7d46" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Batom"
+                        android:text="Bronzer"
                         android:textColor="#eb7d46"
                         android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </FrameLayout>
 
-            <!-- Demais categorias seguem o mesmo padrão -->
-            <!-- Rímel -->
+            <!-- Eyebrow-->
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="140dp"
@@ -190,23 +189,22 @@
                     android:padding="15dp">
 
                     <ImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:src="@drawable/ic_mascara"
-                        android:tint="#eb7d46" />
+                        android:layout_width="67dp"
+                        android:layout_height="67dp"
+                        android:src="@drawable/ic_eyebrow"
+                        app:tint="#eb7d46" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Rímel"
+                        android:text="Eyebrow"
                         android:textColor="#eb7d46"
                         android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </FrameLayout>
-
-            <!-- Delineador -->
+            <!-- eyeliner -->
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="140dp"
@@ -227,54 +225,21 @@
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:src="@drawable/ic_eyeliner"
-                        android:tint="#eb7d46" />
+                        app:tint="#eb7d46" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Delineador"
+                        android:text="Eyeliner"
                         android:textColor="#eb7d46"
                         android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </FrameLayout>
 
-            <!-- Base -->
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="140dp"
-                android:layout_columnWeight="1"
-                android:layout_margin="8dp"
-                android:background="#eb7d46"
-                android:padding="1dp">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="#FFFFFF"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="15dp">
-
-                    <ImageView
-                        android:layout_width="56dp"
-                        android:layout_height="56dp"
-                        android:src="@drawable/ic_foundation"
-                        android:tint="#eb7d46" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="Base"
-                        android:textColor="#eb7d46"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-                </LinearLayout>
-            </FrameLayout>
-
-            <!-- Sombra -->
+            <!-- eyeshadow -->
             <FrameLayout
                 android:layout_width="0dp"
                 android:layout_height="140dp"
@@ -295,18 +260,189 @@
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:src="@drawable/ic_eyeshadow"
-                        android:tint="#eb7d46" />
+                        app:tint="#eb7d46" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Sombra"
+                        android:text="Eyeshadow"
                         android:textColor="#eb7d46"
                         android:textSize="15sp"
                         android:textStyle="bold" />
                 </LinearLayout>
             </FrameLayout>
+
+            <!-- foundation -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#eb7d46"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@drawable/ic_foundation"
+                        app:tint="#eb7d46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Foundation"
+                        android:textColor="#eb7d46"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Lip liner -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#eb7d46"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@drawable/ic_lipliner"
+                        app:tint="#eb7d46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Lip liner"
+                        android:textColor="#eb7d46"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- lipstick -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#eb7d46"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@drawable/ic_lipstick"
+                        app:tint="#eb7d46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Lipstick"
+                        android:textColor="#eb7d46"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Mascara -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#eb7d46"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@drawable/ic_mascara"
+                        app:tint="#eb7d46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Mascara"
+                        android:textColor="#eb7d46"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Nail polish-->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#eb7d46"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@drawable/ic_nailpolish"
+                        app:tint="#eb7d46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Nail polish"
+                        android:textColor="#eb7d46"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
         </GridLayout>
     </LinearLayout>
 </ScrollView>
