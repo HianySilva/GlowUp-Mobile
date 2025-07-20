@@ -3,10 +3,9 @@ package com.example.glowup
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
-import android.widget.GridLayout
+import android.widget.FrameLayout
 import android.widget.ImageButton
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 
 class HomeActivity : AppCompatActivity() {
 
@@ -24,7 +23,6 @@ class HomeActivity : AppCompatActivity() {
         // Configurar o botão de busca
         val btnBuscar = findViewById<ImageButton>(R.id.btnBuscar)
         btnBuscar.setOnClickListener {
-            // Implemente a lógica de busca aqui
             showSearchDialog()
         }
 
@@ -33,35 +31,32 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setupCategoryClicks() {
-        // IDs dos layouts de cada categoria (assumindo que são os primeiros filhos do GridLayout)
-        val gridCategorias = findViewById<GridLayout>(R.id.gridCategorias)
-
-        // Como não temos IDs individuais para cada categoria, vamos acessar pela posição
-        val categories = listOf(
-            "Pó Facial",
-            "Batom",
-            "Rímel",
-            "Delineador",
-            "Base",
-            "Sombra"
+        // Mapeamento de IDs para nomes de categoria
+        val categoryMap = mapOf(
+            R.id.category_powder to "Pó Facial",
+            R.id.category_lipstick to "Batom",
+            R.id.category_mascara to "Rímel",
+            R.id.category_eyeliner to "Delineador",
+            R.id.category_foundation to "Base",
+            R.id.category_eyeshadow to "Sombra",
+            R.id.category_blush to "Blush",
+            R.id.category_concealer to "Corretivo",
+            R.id.category_highlighter to "Iluminador",
+            R.id.category_primer to "Primer"
         )
 
-        // Verifica se o GridLayout tem pelo menos 6 itens (2 colunas x 3 linhas)
-        if (gridCategorias.childCount >= 6) {
-            for (i in 0 until 6) {
-                val categoryLayout = gridCategorias.getChildAt(i)
-                categoryLayout.setOnClickListener {
-                    val intent = Intent(this, CategoryActivity::class.java).apply {
-                        putExtra("CATEGORY_NAME", categories[i])
-                    }
-                    startActivity(intent)
+        // Configurar o listener para cada categoria
+        categoryMap.forEach { (id, name) ->
+            findViewById<FrameLayout>(id).setOnClickListener {
+                val intent = Intent(this, CategoryActivity::class.java).apply {
+                    putExtra("CATEGORY_NAME", name)
                 }
+                startActivity(intent)
             }
         }
     }
 
     private fun showSearchDialog() {
-        // Implementação básica de um diálogo de busca
         val builder = android.app.AlertDialog.Builder(this)
         builder.setTitle("Buscar Produtos")
             .setMessage("Funcionalidade de busca será implementada aqui")
