@@ -50,8 +50,8 @@
                 android:layout_height="36dp"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:src="@drawable/ic_search"
-                android:tint="#eb7d46"
-                android:contentDescription="Buscar" />
+                android:contentDescription="Buscar"
+                app:tint="#eb7d46" />
         </LinearLayout>
 
         <!-- Container para Banner e Botão -->
@@ -59,10 +59,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp">
-
-            <!-- Banner Principal -->
-
-            <!-- Botão na Lateral Direita com arredondamento direto -->
 
             <ImageView
                 android:id="@+id/imgBanner"
@@ -91,20 +87,21 @@
                 app:cornerRadius="20dp" />
         </RelativeLayout>
 
-        <!-- Grid de Categorias com bordas implementadas diretamente -->
+        <!-- Grid de Categorias com 2 colunas e 5 linhas -->
         <GridLayout
             android:id="@+id/gridCategorias"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
             android:columnCount="2"
-            android:rowCount="3"
+            android:rowCount="5"
             android:alignmentMode="alignMargins"
             android:columnOrderPreserved="false"
             android:useDefaultMargins="true">
 
             <!-- Pó Facial -->
             <FrameLayout
+                android:id="@+id/category_powder"
                 android:layout_width="0dp"
                 android:layout_height="140dp"
                 android:layout_columnWeight="1"
@@ -124,7 +121,7 @@
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:src="@drawable/ic_powder"
-                        android:tint="#eb7d46" />
+                        app:tint="#eb7d46" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -139,6 +136,7 @@
 
             <!-- Batom -->
             <FrameLayout
+                android:id="@+id/category_lipstick"
                 android:layout_width="0dp"
                 android:layout_height="140dp"
                 android:layout_columnWeight="1"
@@ -158,7 +156,7 @@
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:src="@drawable/ic_lipstick"
-                        android:tint="#eb7d46" />
+                        app:tint="#eb7d46" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -171,9 +169,9 @@
                 </LinearLayout>
             </FrameLayout>
 
-            <!-- Demais categorias seguem o mesmo padrão -->
             <!-- Rímel -->
             <FrameLayout
+                android:id="@+id/category_mascara"
                 android:layout_width="0dp"
                 android:layout_height="140dp"
                 android:layout_columnWeight="1"
@@ -193,7 +191,7 @@
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:src="@drawable/ic_mascara"
-                        android:tint="#eb7d46" />
+                        app:tint="#eb7d46" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -208,6 +206,7 @@
 
             <!-- Delineador -->
             <FrameLayout
+                android:id="@+id/category_eyeliner"
                 android:layout_width="0dp"
                 android:layout_height="140dp"
                 android:layout_columnWeight="1"
@@ -227,7 +226,7 @@
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:src="@drawable/ic_eyeliner"
-                        android:tint="#eb7d46" />
+                        app:tint="#eb7d46" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -242,6 +241,7 @@
 
             <!-- Base -->
             <FrameLayout
+                android:id="@+id/category_foundation"
                 android:layout_width="0dp"
                 android:layout_height="140dp"
                 android:layout_columnWeight="1"
@@ -261,7 +261,7 @@
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:src="@drawable/ic_foundation"
-                        android:tint="#eb7d46" />
+                        app:tint="#eb7d46" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -276,6 +276,7 @@
 
             <!-- Sombra -->
             <FrameLayout
+                android:id="@+id/category_eyeshadow"
                 android:layout_width="0dp"
                 android:layout_height="140dp"
                 android:layout_columnWeight="1"
@@ -295,13 +296,153 @@
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:src="@drawable/ic_eyeshadow"
-                        android:tint="#eb7d46" />
+                        app:tint="#eb7d46" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:text="Sombra"
+                        android:textColor="#eb7d46"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Blush -->
+            <FrameLayout
+                android:id="@+id/category_blush"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#eb7d46"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@drawable/ic_powder"
+                        app:tint="#eb7d46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Blush"
+                        android:textColor="#eb7d46"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Corretivo -->
+            <FrameLayout
+                android:id="@+id/category_concealer"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#eb7d46"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@drawable/ic_foundation"
+                        app:tint="#eb7d46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Corretivo"
+                        android:textColor="#eb7d46"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Iluminador -->
+            <FrameLayout
+                android:id="@+id/category_highlighter"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#eb7d46"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@drawable/ic_eyeshadow"
+                        app:tint="#eb7d46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Iluminador"
+                        android:textColor="#eb7d46"
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Primer -->
+            <FrameLayout
+                android:id="@+id/category_primer"
+                android:layout_width="0dp"
+                android:layout_height="140dp"
+                android:layout_columnWeight="1"
+                android:layout_margin="8dp"
+                android:background="#eb7d46"
+                android:padding="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#FFFFFF"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <ImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:src="@drawable/ic_foundation"
+                        app:tint="#eb7d46" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="Primer"
                         android:textColor="#eb7d46"
                         android:textSize="15sp"
                         android:textStyle="bold" />
