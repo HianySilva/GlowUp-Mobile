@@ -8,17 +8,38 @@
     android:background="#FFFFFF"
     android:padding="16dp">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:paddingHorizontal="16dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp">
+
+    <!-- Botão de voltar com ícone baixado -->
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/ic_back"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="true"
+        android:contentDescription="Voltar"
+        android:layout_centerVertical="true"
+        android:padding="12dp"/>
     <!-- Título -->
     <TextView
         android:id="@+id/tvTitle"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Todos os Produtos"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#eb7d46"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"/>
+        android:layout_centerInParent="true"
+        android:maxLines="1"
+        android:ellipsize="end"/>
+    </RelativeLayout>
 
     <!-- Lista de produtos -->
     <androidx.recyclerview.widget.RecyclerView
