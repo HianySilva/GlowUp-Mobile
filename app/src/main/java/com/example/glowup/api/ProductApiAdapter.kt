@@ -1,3 +1,4 @@
+// ProductApiAdapter.kt
 package com.example.glowup
 
 import android.view.LayoutInflater
@@ -17,27 +18,28 @@ class ProductApiAdapter(
 
         fun bind(product: ApiProduct) {
             with(binding) {
-                // Ajusta a URL da imagem para garantir que comece com https:
+                // Ajusta a URL da imagem
                 val imageUrl = product.imageUrl?.let {
                     if (it.startsWith("//")) "https:$it" else it
                 } ?: ""
 
-                // Carregar a imagem real da API com Glide, usar placeholder e error
+                // Carregar imagem com Glide
                 Glide.with(imgProduct.context)
                     .load(imageUrl)
                     .placeholder(R.drawable.placeholder)
-                    .error(R.drawable.ic_eyeliner) // Pode criar esse drawable para erro
+                    .error(R.drawable.placeholder) // Use o mesmo placeholder para erro
                     .into(imgProduct)
 
                 tvProductName.text = product.name ?: "Produto sem nome"
 
-                val priceText = product.price?.toDoubleOrNull()?.let { "R$ %.2f".format(it) }
-                    ?: "Preço indisponível"
+                // Formatar preço
+                val priceText = product.price?.toDoubleOrNull()?.let {
+                    "R$ %.2f".format(it)
+                } ?: "Preço indisponível"
+
                 tvProductPrice.text = priceText
 
-                btnAddToCart.setOnClickListener {
-                    onAddToCartClick(product)
-                }
+                btnAddToCart.setOnClickListener { onAddToCartClick(product) }
 
                 root.contentDescription = "Produto: ${product.name ?: "sem nome"}, Preço: $priceText"
             }

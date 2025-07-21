@@ -1,3 +1,4 @@
+// ProductsActivity.kt
 package com.example.glowup
 
 import android.os.Bundle
@@ -22,8 +23,9 @@ class ProductsActivity : AppCompatActivity() {
         binding = ActivityProductsBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        binding.btnBack.setOnClickListener { finish() }
         setupRecyclerView()
-        fetchProducts()
+        fetchAllProducts()
     }
 
     private fun setupRecyclerView() {
@@ -34,7 +36,7 @@ class ProductsActivity : AppCompatActivity() {
         binding.rvProducts.adapter = adapter
     }
 
-    private fun fetchProducts() {
+    private fun fetchAllProducts() {
         productService.getProducts().enqueue(object : Callback<List<ApiProduct>> {
             override fun onResponse(call: Call<List<ApiProduct>>, response: Response<List<ApiProduct>>) {
                 if (response.isSuccessful) {

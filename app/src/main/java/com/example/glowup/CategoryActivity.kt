@@ -1,14 +1,35 @@
+// CategoryActivity.kt
 package com.example.glowup
 
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.GridLayoutManager
+import com.example.glowup.api.ApiProduct
+import com.example.glowup.api.RetrofitInstance
 import com.example.glowup.databinding.ActivityCategoryBinding
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class CategoryActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityCategoryBinding
+    private lateinit var adapter: ProductApiAdapter
+    private val productService = RetrofitInstance.api
+
+    private val categoryMapping = mapOf(
+        "Blush" to "blush",
+        "Bronzer" to "bronzer",
+        "Sobrancelhas" to "eyebrow",
+        "Delineador" to "eyeliner",
+        "Sombra" to "eyeshadow",
+        "Base" to "foundation",
+        "Lápis de Boca" to "lip_liner",
+        "Batom" to "lipstick",
+        "Rímel" to "mascara",
+        "Esmalte" to "nail_polish"
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,30 +38,42 @@ class CategoryActivity : AppCompatActivity() {
 
         val categoryName = intent.getStringExtra("CATEGORY_NAME") ?: "Categoria"
         binding.tvCategoryTitle.text = categoryName
-
         binding.btnBack.setOnClickListener { finish() }
 
-        setupRecyclerView(categoryName)
-    }
+        setupRecyclerView()
 
-    private fun setupRecyclerView(categoryName: String) {
-        val products = listOf(
-            Product(name = "Pó Compacto", price = 49.90, imageRes = R.drawable.placeholder),
-            Product(name = "Batom Matte", price = 29.90, imageRes = R.drawable.placeholder),
-            Product(name = "Rímel à Prova D'água", price = 39.90, imageRes = R.drawable.placeholder),
-            Product(name = "Delineador Líquido", price = 34.90, imageRes = R.drawable.placeholder),
-            Product(name = "Base Líquida", price = 59.90, imageRes = R.drawable.placeholder),
-            Product(name = "Sombra em Pó", price = 24.90, imageRes = R.drawable.placeholder),
-            Product(name = "Gloss Labial", price = 19.90, imageRes = R.drawable.placeholder),
-            Product(name = "Corretivo", price = 29.90, imageRes = R.drawable.placeholder)
-        )
-
-        val adapter = ProductAdapter(products) { product ->
-            // Callback quando clicar no botão "Adicionar ao carrinho"
-            Toast.makeText(this, "Adicionado: ${product.name}", Toast.LENGTH_SHORT).show()
+        // Obter o product_type correspondente à categoria
+        val apiCategory = categoryMapping[categoryName] ?: run {
+            Toast.makeText(this, "Categoria não encontrada", Toast.LENGTH_SHORT).show()
+            finish()
+            return
         }
 
+        fetchProducts(apiCategory)
+    }
+
+    private fun setupRecyclerView() {
+        adapter = ProductApiAdapter(mutableListOf()) { product ->
+            Toast.makeText(this, "${product.name ?: "Produto"} adicionado ao carrinho", Toast.LENGTH_SHORT).show()
+        }
         binding.rvProducts.layoutManager = GridLayoutManager(this, 2)
         binding.rvProducts.adapter = adapter
+    }
+
+    private fun fetchProducts(category: String) {
+        productService.getProducts(category).enqueue(object : Callback<List<ApiProduct>> {
+            override fun onResponse(call: Call<List<ApiProduct>>, response: Response<List<ApiProduct>>) {
+                if (response.isSuccessful) {
+                    val products = response.body() ?: emptyList()
+                    adapter.updateProducts(products)
+                } else {
+                    Toast.makeText(this@CategoryActivity, "Erro ao carregar produtos", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            override fun onFailure(call: Call<List<ApiProduct>>, t: Throwable) {
+                Toast.makeText(this@CategoryActivity, "Falha: ${t.message}", Toast.LENGTH_LONG).show()
+            }
+        })
     }
 }
