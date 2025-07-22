@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.glowup.databinding.ActivityHomeBinding
+import kotlin.collections.mapOf as mapOf1
 
 class HomeActivity : AppCompatActivity() {
 
@@ -27,10 +28,10 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun setupCategoryClicks() {
-        val categoryMap = mapOf(
+        val categoryMap = mapOf1(
             binding.categoryBlush to "Blush",
             binding.categoryBronzer to "Bronzer",
-            binding.categoryEyebrow to "Sobrancelhas",
+            binding.categoryEyebrow to "Lápis de Olho",
             binding.categoryEyeliner to "Delineador",
             binding.categoryEyeshadow to "Sombra",
             binding.categoryFoundation to "Base",

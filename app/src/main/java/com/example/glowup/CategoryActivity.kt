@@ -21,7 +21,7 @@ class CategoryActivity : AppCompatActivity() {
     private val categoryMapping = mapOf(
         "Blush" to "blush",
         "Bronzer" to "bronzer",
-        "Sobrancelhas" to "eyebrow",
+        "Lápis de Olho" to "eyebrow",
         "Delineador" to "eyeliner",
         "Sombra" to "eyeshadow",
         "Base" to "foundation",

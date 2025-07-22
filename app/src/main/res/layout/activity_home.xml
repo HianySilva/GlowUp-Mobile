@@ -120,7 +120,7 @@
                     <ImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:src="@drawable/ic_powder"
+                        android:src="@drawable/ic_blush"
                         app:tint="#eb7d46" />
 
                     <TextView
@@ -155,7 +155,7 @@
                     <ImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:src="@drawable/ic_powder"
+                        android:src="@drawable/ic_bronzer"
                         app:tint="#eb7d46" />
 
                     <TextView
@@ -190,14 +190,14 @@
                     <ImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:src="@drawable/ic_mascara"
+                        android:src="@drawable/ic_eyebrow"
                         app:tint="#eb7d46" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Sobrancelhas"
+                        android:text="Lápis de Olho"
                         android:textColor="#eb7d46"
                         android:textSize="15sp"
                         android:textStyle="bold" />
@@ -330,7 +330,7 @@
                     <ImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:src="@drawable/ic_eyeliner"
+                        android:src="@drawable/ic_lipliner"
                         app:tint="#eb7d46" />
 
                     <TextView
@@ -435,7 +435,7 @@
                     <ImageView
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:src="@drawable/ic_foundation"
+                        android:src="@drawable/ic_nailpolish"
                         app:tint="#eb7d46" />
 
                     <TextView
