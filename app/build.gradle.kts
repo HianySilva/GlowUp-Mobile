@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+    id ("kotlin-parcelize")
 }
 
 android {
@@ -48,7 +49,9 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation(libs.androidx.recyclerview)
     implementation ("androidx.appcompat:appcompat:1.6.1")
-    implementation ("androidx.recyclerview:recyclerview:1.3.0") 
+    implementation ("androidx.recyclerview:recyclerview:1.3.0")
+    implementation(libs.androidx.navigation.fragment.ktx)
+    implementation(libs.androidx.navigation.ui.ktx)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

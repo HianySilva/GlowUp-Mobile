@@ -16,5 +16,8 @@ data class ApiProduct(
     val price: String?,
 
     @SerializedName("api_featured_image")
-    val imageUrl: String?
+    val imageUrl: String?,
+
+    @SerializedName("description")
+    val description: String?
 )

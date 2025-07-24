@@ -1,6 +1,6 @@
-// CategoryActivity.kt
 package com.example.glowup
 
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.glowup.api.ApiProduct
 import com.example.glowup.api.RetrofitInstance
 import com.example.glowup.databinding.ActivityCategoryBinding
+import com.google.gson.Gson
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -42,7 +43,6 @@ class CategoryActivity : AppCompatActivity() {
 
         setupRecyclerView()
 
-        // Obter o product_type correspondente à categoria
         val apiCategory = categoryMapping[categoryName] ?: run {
             Toast.makeText(this, "Categoria não encontrada", Toast.LENGTH_SHORT).show()
             finish()
@@ -54,7 +54,11 @@ class CategoryActivity : AppCompatActivity() {
 
     private fun setupRecyclerView() {
         adapter = ProductApiAdapter(mutableListOf()) { product ->
-            Toast.makeText(this, "${product.name ?: "Produto"} adicionado ao carrinho", Toast.LENGTH_SHORT).show()
+            // Ao clicar no produto, abrir detalhes passando JSON
+            val productJson = Gson().toJson(product)
+            val intent = Intent(this, ProductDetailActivity::class.java)
+            intent.putExtra("product_json", productJson)
+            startActivity(intent)
         }
         binding.rvProducts.layoutManager = GridLayoutManager(this, 2)
         binding.rvProducts.adapter = adapter
