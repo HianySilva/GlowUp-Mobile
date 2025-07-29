@@ -20,9 +20,7 @@ class HomeActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        binding.btnBuscar.setOnClickListener {
-            showSearchDialog()
-        }
+
 
         setupCategoryClicks()
     }

@@ -47,6 +47,7 @@ class ProductDetailActivity : AppCompatActivity() {
         binding.tvProductNameDetail.text = product.name ?: "Sem nome"
         binding.tvBrandDetail.text = product.brand ?: "Marca indisponível"
         binding.tvCategoryDetail.text = product.category ?: "Categoria indisponível"
+        binding.btnBack.setOnClickListener { finish() }
 
         val priceText = product.price?.toDoubleOrNull()?.let { "R$ %.2f".format(it) } ?: "Preço indisponível"
         binding.tvPriceDetail.text = priceText
