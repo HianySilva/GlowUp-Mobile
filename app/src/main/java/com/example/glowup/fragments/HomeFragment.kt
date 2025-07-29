@@ -33,11 +33,6 @@ class HomeFragment : Fragment() {
             startActivity(intent)
         }
 
-        // Botão de busca
-        binding.btnBuscar.setOnClickListener {
-            showSearchDialog()
-        }
-
         // Categorias
         setupCategoryClicks()
     }
