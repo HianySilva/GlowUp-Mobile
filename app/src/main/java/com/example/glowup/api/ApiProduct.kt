@@ -3,6 +3,10 @@ package com.example.glowup.api
 import com.google.gson.annotations.SerializedName
 
 data class ApiProduct(
+
+    @SerializedName("id")
+    val id: Int?,
+
     @SerializedName("name")
     val name: String?,
 

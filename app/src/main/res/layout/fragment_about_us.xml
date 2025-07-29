@@ -1,0 +1,68 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header -->
+    <RelativeLayout
+        android:id="@+id/aboutHeader"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="16dp">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:layout_centerVertical="true"
+            android:contentDescription="Logo GlowUp"
+            android:src="@drawable/ic_glowup_logo" />
+
+        <TextView
+            android:id="@+id/tvAppName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@id/imgLogo"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="8dp"
+            android:text="Glow Up"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:textColor="#eb7d46" />
+
+    </RelativeLayout>
+
+    <!-- Título Sobre Nós -->
+    <TextView
+        android:id="@+id/tvAboutTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sobre Nós"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#eb7d46"
+        android:layout_marginTop="24dp"
+        android:layout_gravity="center_horizontal" />
+
+    <!-- Conteúdo -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp">
+
+        <TextView
+            android:id="@+id/tvAboutContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="O GlowUp é um aplicativo mobile focado em oferecer uma experiência moderna e prática para entusiastas de maquiagem. Desenvolvido em Kotlin no Android Studio, o app se conecta a uma API pública para exibir uma vasta gama de produtos por categoria. Nosso objetivo é simplificar o acesso a produtos de beleza através de uma interface intuitiva, elegante e funcional, destacando a beleza e a diversidade do universo da maquiagem."
+            android:textSize="16sp"
+            android:lineSpacingExtra="4dp" />
+
+
+    </ScrollView>
+
+</LinearLayout>

@@ -18,21 +18,21 @@ class ProductApiAdapter(
 
         fun bind(product: ApiProduct) {
             with(binding) {
-                // Ajusta a URL da imagem
+
                 val imageUrl = product.imageUrl?.let {
                     if (it.startsWith("//")) "https:$it" else it
                 } ?: ""
 
-                // Carregar imagem com Glide
+
                 Glide.with(imgProduct.context)
                     .load(imageUrl)
                     .placeholder(R.drawable.placeholder)
-                    .error(R.drawable.placeholder) // Use o mesmo placeholder para erro
+                    .error(R.drawable.placeholder)
                     .into(imgProduct)
 
                 tvProductName.text = product.name ?: "Produto sem nome"
 
-                // Formatar preço
+
                 val priceText = product.price?.toDoubleOrNull()?.let {
                     "R$ %.2f".format(it)
                 } ?: "Preço indisponível"

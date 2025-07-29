@@ -1,14 +1,62 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:gravity="center">
+    android:layout_height="match_parent">
 
+    <!-- Header fixo no topo -->
+    <RelativeLayout
+        android:id="@+id/cartHeader"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="#FFFFFF"
+        android:elevation="4dp"
+        android:paddingHorizontal="16dp"
+        android:layout_gravity="top">
+
+        <ImageView
+            android:id="@+id/imgLogo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:adjustViewBounds="true"
+            android:contentDescription="Logo GlowUp"
+            android:maxHeight="48dp"
+            android:src="@drawable/ic_glowup_logo" />
+    </RelativeLayout>
+
+    <!-- RecyclerView com margem para header e botão -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvCart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="80dp"
+        android:clipToPadding="false"
+        android:paddingHorizontal="16dp" />
+
+    <!-- Texto de carrinho vazio -->
     <TextView
-        android:id="@+id/tvCart"
+        android:id="@+id/tvEmptyCart"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Carrinho"
-        android:textSize="24sp"
-        android:textStyle="bold" />
+        android:text="Seu carrinho está vazio"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:textColor="#eb7d46" />
+
+    <!-- Botão de finalizar compra fixo no rodapé -->
+    <Button
+        android:id="@+id/btnCheckout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Finalizar Compra"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:backgroundTint="#eb7d46"
+        android:textColor="#FFFFFF"
+        android:elevation="6dp" />
 </FrameLayout>

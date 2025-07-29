@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import com.example.glowup.databinding.ActivityHomeBinding
 import com.example.glowup.fragments.HomeFragment
 import com.example.glowup.fragments.CartFragment
-import com.example.glowup.fragments.ProfileFragment
+import com.example.glowup.fragments.AboutUsFragment
 import androidx.fragment.app.Fragment
 
 
@@ -20,10 +20,10 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Iniciar com o fragmento da Home
+
         replaceFragment(HomeFragment())
 
-        // Configurar os cliques do menu
+
         binding.menuHome.setOnClickListener {
             replaceFragment(HomeFragment())
         }
@@ -32,8 +32,8 @@ class HomeActivity : AppCompatActivity() {
             replaceFragment(CartFragment())
         }
 
-        binding.menuProfile.setOnClickListener {
-            replaceFragment(ProfileFragment())
+        binding.menuAboutUs.setOnClickListener {
+            replaceFragment(AboutUsFragment())
         }
     }
 
