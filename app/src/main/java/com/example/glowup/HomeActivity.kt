@@ -1,10 +1,15 @@
 package com.example.glowup
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.glowup.databinding.ActivityHomeBinding
-import kotlin.collections.mapOf as mapOf1
+import com.example.glowup.fragments.HomeFragment
+import com.example.glowup.fragments.CartFragment
+import com.example.glowup.fragments.ProfileFragment
+import androidx.fragment.app.Fragment
+
+
+
 
 class HomeActivity : AppCompatActivity() {
 
@@ -15,49 +20,27 @@ class HomeActivity : AppCompatActivity() {
         binding = ActivityHomeBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.btnProdutos.setOnClickListener {
-            val intent = Intent(this, ProductsActivity::class.java)
-            startActivity(intent)
+        // Iniciar com o fragmento da Home
+        replaceFragment(HomeFragment())
+
+        // Configurar os cliques do menu
+        binding.menuHome.setOnClickListener {
+            replaceFragment(HomeFragment())
         }
 
-        binding.btnBuscar.setOnClickListener {
-            showSearchDialog()
+        binding.menuCart.setOnClickListener {
+            replaceFragment(CartFragment())
         }
 
-        setupCategoryClicks()
-    }
-
-    private fun setupCategoryClicks() {
-        val categoryMap = mapOf1(
-            binding.categoryBlush to "Blush",
-            binding.categoryBronzer to "Bronzer",
-            binding.categoryEyebrow to "Lápis de Olho",
-            binding.categoryEyeliner to "Delineador",
-            binding.categoryEyeshadow to "Sombra",
-            binding.categoryFoundation to "Base",
-            binding.categoryLipLiner to "Lápis de Boca",
-            binding.categoryLipstick to "Batom",
-            binding.categoryMascara to "Rímel",
-            binding.categoryNailPolish to "Esmalte"
-        )
-
-        categoryMap.forEach { (view, name) ->
-            view.setOnClickListener {
-                val intent = Intent(this, CategoryActivity::class.java).apply {
-                    putExtra("CATEGORY_NAME", name)
-                }
-                startActivity(intent)
-            }
+        binding.menuProfile.setOnClickListener {
+            replaceFragment(ProfileFragment())
         }
     }
 
-    private fun showSearchDialog() {
-        val builder = android.app.AlertDialog.Builder(this)
-        builder.setTitle("Buscar Produtos")
-            .setMessage("Funcionalidade de busca será implementada aqui")
-            .setPositiveButton("OK") { dialog, _ ->
-                dialog.dismiss()
-            }
-        builder.create().show()
+    private fun replaceFragment(fragment: Fragment) {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fragment_container, fragment)
+            .commit()
     }
 }
+
