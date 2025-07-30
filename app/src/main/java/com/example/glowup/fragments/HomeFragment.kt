@@ -27,13 +27,13 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // Botão de produtos
+
         binding.btnProdutos.setOnClickListener {
             val intent = Intent(requireContext(), ProductsActivity::class.java)
             startActivity(intent)
         }
 
-        // Categorias
+
         setupCategoryClicks()
     }
 
