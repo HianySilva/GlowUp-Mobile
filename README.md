@@ -34,4 +34,9 @@ git clone https://github.com/seu-usuario/glowup-mobile.git
 
 ---
 
+Equipe: 
+Hiany Gabriely
+Kauã Gabriel
+Lucas Manoel
+
 
